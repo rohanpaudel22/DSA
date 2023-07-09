@@ -45,7 +45,7 @@ int main()
 
 
         default:
-            printf("Enter the option in the range 1 to 3");
+            printf("Enter the option in the range 1 to 4");
             break;
         }
 
