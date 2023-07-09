@@ -1,4 +1,4 @@
-// <<"creating singly linked list">>
+// creating singly linked list>>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +18,7 @@ int main()
 {
 
     int option;
-    printf("Enter \n1.create\n 2.display\n 3.Exit\n");
+    printf("Enter\n 1.create\n 2.display\n 3.Exit\n");
     do
     {
 
