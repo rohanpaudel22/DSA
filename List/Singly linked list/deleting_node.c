@@ -43,19 +43,19 @@ int main()
             delete1();
             break;
 
-            case 4:
+        case 4:
             delete2();
             break;
 
-            case 5:
+        case 5:
             delete3();
             break;
-            
-            case 6:
+
+        case 6:
             delete4();
             break;
 
-            case 7:
+        case 7:
             exit(0);
 
         default:
@@ -73,7 +73,7 @@ int create()
     int num;
     printf("Enter the data or -1 to end:");
     scanf("%d", &num);
-    while (num!= -1)
+    while (num != -1)
     {
         new_node = (struct node *)malloc(sizeof(struct node));
         new_node->data = num;
@@ -89,11 +89,10 @@ int create()
 
             ptr = start;
             while (ptr->next != NULL)
-            
+
                 ptr = ptr->next;
-                ptr->next = new_node;
-                new_node->next = NULL;
-            
+            ptr->next = new_node;
+            new_node->next = NULL;
         }
         printf("\nEnter the data:");
         scanf("%d", &num);
@@ -101,29 +100,31 @@ int create()
 }
 // deleting first node
 
-int delete1(){
+int delete1()
+{
     struct node *ptr;
 
-    if(start==NULL){
+    if (start == NULL)
+    {
         printf("Underflow");
-    
     }
     ptr = start;
     start = start->next;
     free(ptr);
-    
 }
 // deleting last node
 
-int delete2(){
-    struct node *ptr , *preptr;
+int delete2()
+{
+    struct node *ptr, *preptr;
 
-    if(start==NULL){
+    if (start == NULL)
+    {
         printf("Underflow");
-
     }
     ptr = start;
-    while(ptr->next !=NULL){
+    while (ptr->next != NULL)
+    {
         preptr = ptr;
         ptr = ptr->next;
     }
@@ -132,37 +133,43 @@ int delete2(){
 }
 // deleting a node after the given node
 
-int delete3(){
-    struct node *ptr , *preptr;
+int delete3()
+{
+    struct node *ptr, *preptr;
     int num;
     printf("Enter the data to delete after: ");
     scanf("%d", &num);
-    if(start ==NULL){
+    if (start == NULL)
+    {
         printf("Underflow");
     }
     ptr = start;
     preptr = ptr;
-    while(preptr->data!=num){
-         preptr= ptr;
-         ptr = ptr->next;
+    while (preptr->data != num)
+    {
+        preptr = ptr;
+        ptr = ptr->next;
     }
     preptr->next = ptr->next;
     free(ptr);
 }
 // deleting a given node
 
-int delete4(){
-    struct node *ptr , *preptr;
+int delete4()
+{
+    struct node *ptr, *preptr;
     int num;
     printf("Enter the data to delete: ");
     scanf("%d", &num);
 
-    if(start==NULL){
+    if (start == NULL)
+    {
         printf("Underflow");
     }
-    ptr  = start;
+    ptr = start;
     preptr = ptr;
-    while(ptr->data!=num){
+    while (ptr->data != num)
+    {
         preptr = ptr;
         ptr = ptr->next;
     }
@@ -172,11 +179,11 @@ int delete4(){
 int display()
 {
     struct node *ptr = start;
-    while (ptr!= NULL)
+    while (ptr != NULL)
     {
 
-        printf("\t%d", ptr -> data);
-        ptr = ptr -> next;
+        printf("\t%d", ptr->data);
+        ptr = ptr->next;
     }
     printf("\n");
 }
