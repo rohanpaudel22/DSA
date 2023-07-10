@@ -1,7 +1,5 @@
 // inserting new node at the beginning of doubly linked list
 
-// creating doubly linked list>>
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
